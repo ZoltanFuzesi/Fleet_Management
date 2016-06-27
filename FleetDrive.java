@@ -42,9 +42,8 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
 	
 		
 
-	 	private Container contentPane;
-       
-		private JPanel first = new JPanel();//holder
+	private Container contentPane;
+       	private JPanel first = new JPanel();//holder
         private JPanel top = new JPanel();//buttons
         private JPanel main = new JPanel();//main working
         private JPanel left = new JPanel();//left side for details
@@ -80,22 +79,13 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
         private JButton remove = new JButton("Remove Fleet");
   	 	private JButton Details = new JButton("Fleet Details");
   	 	private FleetManagementCompany mainCompany = new FleetManagementCompany();
-  	 //	private static final int SHORTCUT_MASK = 0;
   	 	private  int companyValue = -1;//used for get the position from the fleet dropdown list
   	 	private  int companyboatValue = -1;//used for get the position from the boat dropdown list
   	 	private  int checkFleets = 0;//used for check if any fleets added
   	 	private  int loopcount = 0;//control drop down list looping
   	 	private  Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-  //		private  JFrame frame;
   		private  JFrame addFrame;
-//		private  JTextField addName;
-//		private  JTextField addNumberOfStaff;
-//		private  JTextField addCapacity;
-	//	private  JTextField addCarryeCar;
-  //		private  JCheckBox freight;
   		private  JTextArea detailsPane;
-  		private  String longDetails = "*************************  Activity Panel *************************";
-  	//	private  GridBagConstraints gbc = new GridBagConstraints();
   		private String carryCars;
   	 	
         JTextField input = new JTextField();
@@ -124,7 +114,6 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
     		 inputField.setText("Add Fleet / Enter the name to the new Fleet:");
     		 fleetLabel.setText("Fleet Name :");
     		 boatLabel.setText("Boats in the Fleet : ");
-    		// scheduleLabel.setText("Schedule :");
     		 input.setEditable(true);
     		 input.setVisible(true);
     		 car.setText("");
@@ -151,7 +140,6 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
     		 inputField.setText("Add Boat / Enter the name to the new Boat :");
     		 fleetLabel.setText("Select Fleet : ");
     		 boatLabel.setText("Boats in the Fleet : ");
-    	//	 scheduleLabel.setText("Schedule :");
     		 input.setEditable(true);
     		 input.setVisible(true);
     		 car.setText("Car option :");
@@ -215,7 +203,6 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
         	fleetList.setModel(model);//Initialise Fleet list drop down box
         	boatList.setModel(model1);//Initialise Boats drop down box
         	scheduleLabel.setText("");
-        	//create Menu bar
     		JMenuBar bar = new JMenuBar();
     		JMenu menu = new JMenu("All Details");
     		JMenuItem closeProgram = new JMenuItem("Exit");
@@ -223,14 +210,12 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
     		menu.add(closeProgram);
     		JMenuItem firstItem = new JMenuItem("Fleet Names");
     		firstItem.addActionListener(this);
-    		//firstItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
     		menu.add(firstItem);
     		JMenuItem fleetsM = new JMenuItem("Number of Fleets");
     		fleetsM.addActionListener(this);
     		menu.add(fleetsM);
     		JMenuItem boatsM = new JMenuItem("Number of Boats");
     		boatsM.addActionListener(this);
-    		//boats.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
     		menu.add(boatsM);
     		JMenuItem clear = new JMenuItem("Clear Activity panel");
     		clear.addActionListener(this);
@@ -326,7 +311,6 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
         				  }
         				  else
         				  {
-        					 // addCarryeCar.setText("NO");
         					  carryCars= "NO";
         				  }
         			}
@@ -341,16 +325,11 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
         				{
         					carryCar.setSelected(false);
         					container.setText("Containers Number");
-        					//car.setText("");
-        					//addCarryeCar.setText("");
         					carryCars = "YES";
         				}
         				else
         				{
-        					//car.setText("Car");
         					staff.setText("Staff number");
-        					//addCapacity.setText("Passengers");
-        					//addCarryeCar.setText("NO");
         					carryCars= "NO";
         				}
         			}
@@ -526,16 +505,6 @@ class FleetDrive extends JFrame implements ActionListener, FleetSource{
 					removeBoatWindows(companyValue, companyboatValue);
 				}
 			}
-			
-			//Add boat ActionListner
-			//if (command.equals("Add Boat to Fleet"))
-			//{
-			//	if(companyValue>=0)
-			//	{
-			//		addBoatWindows(companyValue);
-			//	}
-					
-			//}
 			
 			//Set time and destination Button ActionListner
 			if (command.equals("Set Schedule"))
